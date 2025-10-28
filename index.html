@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Ruta del Dólar — Ushuaia → Alaska</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Mapbox GL JS (v3 estable, CDN unpkg) -->
+  <link href="https://unpkg.com/mapbox-gl@3.1.2/dist/mapbox-gl.css" rel="stylesheet" />
+
+ 
+
+</head>
+<body>
+  <!-- NAV LIGERA -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <div class="brand">🚐 La Ruta del Dólar</div>
+      <a href="#donar" class="btn btn--primary btn--sm">Comprar 1 km</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('https://res.cloudinary.com/giseares/image/upload/v1648061296/m59nkjgl4nq065i0s94qda7iql3k.jpg');">
+    <video class="hero__video" autoplay muted loop playsinline poster="https://res.cloudinary.com/giseares/image/upload/v1648061296/m59nkjgl4nq065i0s94qda7iql3k.jpg">
+      <source src="images/Calimba.mp4" type="video/mp4">
+      Tu navegador no soporta video HTML5.
+    </video>
+
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <h1>De Ushuaia a Alaska, dólar a dólar</h1>
+      <p>
+        Cada kilómetro que compras pone el motor un poco más cerca del Ártico.
+        Tu nombre queda en el mapa. Tu mensaje viaja con nosotros.
+      </p>
+      <button id="donateBtn" class="btn btn--primary btn--lg" aria-labelledby="cta-label">
+        Comprar 1 km
+      </button>
+      <span id="cta-label" class="sr-only">Comprar un kilómetro simbólico por 1 USD</span>
+    </div>
+  </section>
+
+
+
+  <!-- PROGRESO -->
+  <section class="section section--contrast" id="progreso">
+    <div class="container">
+      <h2>Progreso del viaje</h2>
+      <p class="kicker">Meta: 10 000 USD</p>
+
+      <div class="progress">
+        <div id="progress-bar" class="progress__bar" style="width: 23%"></div>
+      </div>
+      <p class="progress__numbers">
+        <span id="amount">2300</span> / 10000 USD
+      </p>
+
+      <div class="perks">
+        <div class="perk">
+          <div class="perk__badge">1–5 km</div>
+          <p>Tu nombre en el mapa</p>
+        </div>
+        <div class="perk">
+          <div class="perk__badge">10 km</div>
+          <p>Sticker “Yo buceé con Calimba”</p>
+        </div>
+        <div class="perk">
+          <div class="perk__badge">50 km</div>
+          <p>Agradecimiento en video</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="section" id="mapa">
+    <div class="container">
+      <h2>Mapa de donantes</h2>
+      <p class="kicker">
+        Cada tramo pintado representa kilómetros financiados por alguien que se sumó al viaje 💚
+      </p>
+      <div id="map" class="map"></div>
+    </div>
+  </section>
+
+
+  <!-- DONAR (ANCLA SIMPLE) -->
+  <section class="section section--panel" id="donar" aria-labelledby="donar-title">
+    <div class="container panel">
+      <div class="panel__content">
+        <h2 id="donar-title">Haz tu aporte</h2>
+        <p>Por ahora este botón está en modo demo. Cuando conectemos la pasarela de pago, te llevará directo a donar y tu pin aparecerá en el mapa.</p>
+      </div>
+      <div class="panel__cta">
+        <button id="donarDemo" class="btn btn--secondary">Probar donación demo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2025 La Ruta del Dólar</p>
+      <nav class="footer__nav">
+        <a href="#progreso">Progreso</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#donar">Donar</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Mapbox GL JS (v3 estable, CDN unpkg) -->
+  <script src="https://unpkg.com/mapbox-gl@3.1.2/dist/mapbox-gl.js"></script>
+
+  <script src="main.js" defer></script>
+
+  <!-- Fallback mínimo por si main.js aún no está listo -->
+  <script>
+    // Evita que el botón quede muerto si todavía no pegaste tu main.js
+    document.getElementById('donarDemo')?.addEventListener('click', () => {
+      alert('Demo: acá iría la pasarela de pagos. Sí, el mundo sigue funcionando con botones.');
+    });
+  </script>
+
+</body>
+</html>

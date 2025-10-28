@@ -1,0 +1,27 @@
+[
+  {
+    "nombre": "Juan",
+    "km": 5,
+    "comentario": "Vamos que se puede 💪",
+    "email": "demo@mail.com",
+    "telefono": "+demo",
+    "instagram": "@demo",
+    "fecha_donacion": "2025-10-25T14:35:00Z"
+  },
+  {
+    "nombre": "Lucía M.",
+    "km": 10,
+    "comentario": "Un poco más de nafta para la combi!",
+    "email": "lucia@mail.com",
+    "telefono": "+57 310 000 1111",
+    "instagram": "@luchaviajera",
+    "fecha_donacion": "2025-10-26T09:10:00Z"
+  },
+  {
+    "nombre": "Carlos y Sofi",
+    "km": 7,
+    "comentario": "Desde Quito con amor!",
+    "instagram": "@carliysofi",
+    "fecha_donacion": "2025-10-27T22:45:00Z"
+  }
+]
