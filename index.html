@@ -47,13 +47,13 @@
   <section class="section section--contrast" id="progreso">
     <div class="container">
       <h2>Progreso del viaje</h2>
-      <p class="kicker">Meta: 10 000 USD</p>
+      <p class="kicker">Meta: 12 000 USD</p>
 
       <div class="progress">
-        <div id="progress-bar" class="progress__bar" style="width: 23%"></div>
+        <div id="progress-bar" class="progress__bar" style="width: 0%"></div>
       </div>
       <p class="progress__numbers">
-        <span id="amount">2300</span> / 10000 USD
+        <span id="amount">0</span> / <span id="goal">12000</span> km
       </p>
 
       <div class="perks">
@@ -81,6 +81,29 @@
         Cada tramo pintado representa kilómetros financiados por alguien que se sumó al viaje 💚
       </p>
       <div id="map" class="map"></div>
+    </div>
+  </section>
+
+  <section class="section" id="juego">
+    <div class="container">
+      <div id="ruta-infinita-wrapper">
+        <h2>🎮 Ruta Infinita</h2>
+        <p class="kicker">Esquivá obstáculos mientras avanzás hacia Alaska 🚐</p>
+
+        <canvas id="gameCanvas" width="700" height="350"></canvas>
+
+        <div class="score-display">
+          Kilómetros: <span id="scoreValue">0</span> km
+        </div>
+
+        <div class="game-info">Usá ↑ o ESPACIO para saltar</div>
+
+        <div id="donateAfterCrash">
+          <p class="crash-text">💥 ¡La combi chocó!</p>
+          <button id="retryBtn" class="retry-btn">🔄 Reintentar</button>
+          <button id="donateBtn" class="donate-btn">💝 Donar kilómetros</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -112,14 +135,35 @@
 
   <!-- Mapbox GL JS (v3 estable, CDN unpkg) -->
   <script src="https://unpkg.com/mapbox-gl@3.1.2/dist/mapbox-gl.js"></script>
-
+  <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="main.js" defer></script>
+  <script src="juego_ruta.js"></script>
+
 
   <!-- Fallback mínimo por si main.js aún no está listo -->
   <script>
     // Evita que el botón quede muerto si todavía no pegaste tu main.js
     document.getElementById('donarDemo')?.addEventListener('click', () => {
       alert('Demo: acá iría la pasarela de pagos. Sí, el mundo sigue funcionando con botones.');
+    });
+  </script>
+
+
+
+  <script>
+    const donationButtons = [
+      "#donateBtn",
+      ".btn--primary.btn--sm",
+      "#donarDemo",
+      ".donate-btn"
+    ];
+
+    donationButtons.forEach(sel => {
+      document.querySelectorAll(sel).forEach(btn => {
+        btn.addEventListener("click", () => {
+          window.location.href = "donar.html";
+        });
+      });
     });
   </script>
 
