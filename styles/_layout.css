@@ -1,0 +1,19 @@
+/* ===============================
+   Layout utilitario
+   =============================== */
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.section--contrast {
+  background: var(--bg-contrast);
+}
+
+.section--panel {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, 0));
+}

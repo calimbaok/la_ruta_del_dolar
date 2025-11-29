@@ -1,0 +1,39 @@
+/* ===============================
+   Mapa
+   =============================== */
+.map {
+  margin-top: 14px;
+  height: 500px;
+  border-radius: 16px;
+  border: 2px solid rgba(0, 161, 178, .35);
+  outline: 1px solid rgba(255, 255, 255, .04);
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(1, 78, 126, .22);
+}
+
+/* ===============================
+   MapBox custom styles
+   =============================== */
+.mapboxgl-marker svg {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.7));
+}
+
+.mapboxgl-popup {
+  background: #fff !important;
+  color: #023047 !important;
+  border-radius: 8px !important;
+  font-weight: 600;
+}
+
+.mapboxgl-popup-content {
+  padding: 10px 14px !important;
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: #fff !important;
+}
+
+/* Pin de llegada con halo */
+.mapboxgl-marker[style*="00A1B2"] svg {
+  filter: drop-shadow(0 0 8px rgba(0, 161, 178, 0.8));
+}

@@ -1,0 +1,56 @@
+/* ===============================
+   Botones
+   =============================== */
+.btn {
+  --btn-bg: var(--c-orange-700);
+  --btn-bg-hover: var(--c-orange-600);
+  --btn-txt: #0b1f2c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background: var(--btn-bg);
+  color: var(--btn-txt);
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .06s ease, background .2s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow: 0 6px 16px rgba(251, 133, 0, .25);
+}
+
+.btn:hover {
+  background: var(--btn-bg-hover);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+  border-color: rgba(255, 255, 255, .2);
+}
+
+/* .btn--primary usa naranja por defecto */
+
+.btn--secondary {
+  --btn-bg: var(--c-blue-600);
+  --btn-bg-hover: var(--c-blue-500);
+  --btn-txt: #012030;
+  box-shadow: 0 6px 16px rgba(0, 134, 180, .25);
+}
+
+.btn--sm {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.btn--lg {
+  padding: 14px 22px;
+  font-size: 18px;
+  border-radius: 14px;
+}

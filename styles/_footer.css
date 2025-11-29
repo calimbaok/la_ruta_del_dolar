@@ -1,0 +1,28 @@
+/* ===============================
+   Footer
+   =============================== */
+.footer {
+  border-top: 1px solid var(--card-border);
+  background: #071825;
+  padding: 28px 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 16px;
+}
+
+.footer__nav a {
+  color: var(--txt-dim);
+}
+
+.footer__nav a:hover {
+  color: var(--txt);
+}

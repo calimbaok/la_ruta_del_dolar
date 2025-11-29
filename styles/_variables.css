@@ -1,0 +1,27 @@
+/* ===============================
+   Paleta (variables)
+   =============================== */
+:root {
+  /* Naranjas / acentos */
+  --c-orange-700: #FB8500;
+  --c-orange-600: #FD9E02;
+  --c-orange-500: #FFB703;
+
+  /* Azules profundos / base */
+  --c-blue-900: #023047;
+  --c-blue-800: #014E7E;
+  --c-blue-700: #006BB5;
+  --c-blue-600: #0086B4;
+  --c-blue-500: #00A1B2;
+
+  /* Derivados */
+  --bg-body: var(--c-blue-900);
+  --bg-contrast: #0c1f2d;        /* un poco más claro que 023047 */
+  --txt: #EAF2F6;                 /* texto claro */
+  --txt-dim: #c7d6df;             /* texto secundario */
+  --ring: rgba(255,183,3,.35);    /* focus rings */
+  --grad-hero: linear-gradient(135deg, var(--c-blue-900) 0%, var(--c-blue-800) 50%, var(--c-blue-700) 100%);
+  --grad-bar: linear-gradient(90deg, var(--c-orange-700), var(--c-orange-500));
+  --card: #0f2a3d;
+  --card-border: rgba(255,255,255,.06);
+}

@@ -1,0 +1,23 @@
+/* ===============================
+   Nav
+   =============================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(2, 48, 71, .85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: .3px;
+}

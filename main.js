@@ -42,6 +42,7 @@ mapboxgl.accessToken = "pk.eyJ1IjoiZ2lzZWFyZXMiLCJhIjoiY21oYXU5OG04MDZvNDJqb2E0c
 
 const startPoint = [-96.13208487843347, 19.206145084180147]; // Veracruz
 let routeMeta = null;
+let lastDonorCoord = null; // Guardar última donación
 
 const map = new mapboxgl.Map({
   container: "map",
@@ -196,12 +197,15 @@ function renderDonors(donors, meta) {
           <div style="font-family: sans-serif; line-height:1.4;">
             <strong>${d.nombre}</strong><br>
             🚐 ${d.km} km donados<br>
-            💬 “${d.comentario || ""}”<br>
+            💬 "${d.comentario || ""}"<br>
             <small>${d.instagram || ""}</small>
           </div>
         `)
       )
       .addTo(map);
+
+    // Guardar última donación para el botón "your location"
+    lastDonorCoord = coordEnd;
   });
 
   // PIN final (meta Alaska)
@@ -281,6 +285,76 @@ async function loadDonors(meta) {
 
 
 // ===============================
+// 📍 BOTÓN "YOUR LOCATION" (última donación)
+// ===============================
+function addLocationButton() {
+  const mapContainer = document.getElementById("map");
+  if (!mapContainer) return;
+
+  // Crear contenedor del botón
+  const buttonContainer = document.createElement("div");
+  buttonContainer.style.cssText = `
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+  `;
+
+  // Crear botón
+  const btn = document.createElement("button");
+  btn.innerHTML = `
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="9"></circle>
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M12 1v6M12 17v6M23 12h-6M1 12h6"></path>
+    </svg>
+  `;
+  btn.style.cssText = `
+    width: 44px;
+    height: 44px;
+    border: 2px solid #FB8500;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    color: #FB8500;
+  `;
+
+  btn.addEventListener("mouseenter", () => {
+    btn.style.background = "#FB8500";
+    btn.style.color = "white";
+    btn.style.boxShadow = "0 4px 12px rgba(251, 133, 0, 0.3)";
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    btn.style.background = "white";
+    btn.style.color = "#FB8500";
+  });
+
+  // Click: centrar en última donación
+  btn.addEventListener("click", () => {
+    if (lastDonorCoord) {
+      map.flyTo({
+        center: lastDonorCoord,
+        zoom: 6,
+        duration: 1000,
+        pitch: 40,
+        bearing: -10,
+      });
+    } else {
+      alert("Aún no hay donaciones registradas en el mapa 🚐");
+    }
+  });
+
+  buttonContainer.appendChild(btn);
+  mapContainer.appendChild(buttonContainer);
+}
+
+// ===============================
 // 🗺️ CUANDO EL MAPA ESTÉ LISTO
 // ===============================
 map.on("load", async () => {
@@ -289,4 +363,5 @@ map.on("load", async () => {
   if (meta && meta.coords.length > 0) {
     await loadDonors(meta); // Carga los donantes sobre esa ruta
   }
+  addLocationButton(); // Agregar botón de ubicación
 });
