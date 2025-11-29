@@ -6,27 +6,27 @@ Este proyecto utiliza un sistema modular de CSS donde cada componente tiene su p
 
 | Archivo | Descripción |
 |---------|-------------|
-| `_variables.css` | Paleta de colores y variables globales |
-| `_reset.css` | Reset de estilos y tipografía base |
-| `_layout.css` | Grid container, secciones y layout general |
-| `_nav.css` | Barra de navegación sticky |
-| `_hero.css` | Sección hero con video de fondo |
-| `_buttons.css` | Botones (primarios, secundarios, tamaños) |
-| `_progress.css` | Barra de progreso y cards de perks |
-| `_map.css` | Componentes del mapa Mapbox |
-| `_panel.css` | Panel de donación |
-| `_game.css` | Estilos del juego Ruta Infinita |
-| `_footer.css` | Footer |
-| `_donar-page.css` | Estilos específicos de `donar.html` |
+| `variables.css` | Paleta de colores y variables globales |
+| `reset.css` | Reset de estilos y tipografía base |
+| `layout.css` | Grid container, secciones y layout general |
+| `nav.css` | Barra de navegación sticky |
+| `hero.css` | Sección hero con video de fondo |
+| `buttons.css` | Botones (primarios, secundarios, tamaños) |
+| `progress.css` | Barra de progreso y cards de perks |
+| `map.css` | Componentes del mapa Mapbox |
+| `panel.css` | Panel de donación |
+| `game.css` | Estilos del juego Ruta Infinita |
+| `footer.css` | Footer |
+| `donar-page.css` | Estilos específicos de `donar.html` |
 
 ## 🔗 Importación
 
 El archivo **`styles.css`** centraliza todos los imports en el orden correcto:
 
 ```css
-@import "_variables.css";
-@import "_reset.css";
-@import "_layout.css";
+@import url('./variables.css');
+@import url('./reset.css');
+@import url('./layout.css');
 /* ... resto de componentes */
 ```
 
@@ -39,14 +39,14 @@ El archivo **`styles.css`** centraliza todos los imports en el orden correcto:
 
 ## 🎯 Cómo agregar un nuevo componente
 
-1. Crear archivo `_nombre-componente.css`
+1. Crear archivo `nombre-componente.css` (sin guion bajo al inicio)
 2. Agregar los estilos dentro
 3. Importarlo en `styles.css` en la posición correcta
 
 Ejemplo:
 ```css
 /* styles.css */
-@import "_carousel.css";  /* ← agregar línea nueva */
+@import url('./carousel.css');  /* ← agregar línea nueva */
 ```
 
 ## 📱 HTML
