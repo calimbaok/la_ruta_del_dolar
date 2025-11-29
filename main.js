@@ -126,7 +126,7 @@ function interpolateOnRoute(meta, targetKm) {
 // ===============================
 async function loadRoute() {
   try {
-    const res = await fetch("route.json");
+    const res = await fetch("./route.json");
     if (!res.ok) throw new Error("No se pudo cargar route.json");
     const data = await res.json();
 
