@@ -24,13 +24,6 @@ function updateProgress() {
   if (goalText) goalText.textContent = goalAmount;
 }
 
-document.getElementById("donateBtn")?.addEventListener("click", () => {
-  currentAmount += 10;
-  if (currentAmount > goalAmount) currentAmount = goalAmount;
-  updateProgress();
-  alert("Gracias por tu aporte 💚 (modo demo)");
-});
-
 updateProgress();
 
 // ===============================

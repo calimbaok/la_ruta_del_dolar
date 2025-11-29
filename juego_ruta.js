@@ -285,9 +285,5 @@ if (canvas && ctx && scoreElement && donateAfterCrash && retryBtn && donateBtn) 
     gameLoop();
   });
 
-  donateBtn.addEventListener("click", () => {
-    alert("¡Gracias por tu apoyo! 💝");
-  });
-
   gameLoop();
 }

@@ -14,7 +14,7 @@
   <header class="nav">
     <div class="container nav__inner">
       <div class="brand">🚐 La Ruta del Dólar</div>
-      <a href="#donar" class="btn btn--primary btn--sm">Comprar 1 km</a>
+      <a href="#donar" class="btn btn--primary btn--sm btn-donate">Comprar 1 km</a>
     </div>
   </header>
 
@@ -32,7 +32,7 @@
         Cada kilómetro que compras pone el motor un poco más cerca del Ártico.
         Tu nombre queda en el mapa. Tu mensaje viaja con nosotros.
       </p>
-      <button id="donateBtn" class="btn btn--primary btn--lg" aria-labelledby="cta-label">
+      <button id="donateBtn" class="btn btn--primary btn--lg btn-donate" aria-labelledby="cta-label">
         Comprar 1 km
       </button>
       <span id="cta-label" class="sr-only">Comprar un kilómetro simbólico por 1 USD</span>
@@ -99,7 +99,7 @@
         <div id="donateAfterCrash">
           <p class="crash-text">💥 ¡La combi chocó!</p>
           <button id="retryBtn" class="retry-btn">🔄 Reintentar</button>
-          <button id="donateBtn" class="donate-btn">💝 Donar kilómetros</button>
+          <button id="donateBtnGame" class="donate-btn btn-donate">💝 Donar kilómetros</button>
         </div>
       </div>
     </div>
@@ -137,30 +137,12 @@
   <script src="./main.js" defer></script>
   <script src="./juego_ruta.js"></script>
 
-
-  <!-- Fallback mínimo por si main.js aún no está listo -->
+  <!-- Scripts de navegación de donaciones -->
   <script>
-    // Evita que el botón quede muerto si todavía no pegaste tu main.js
-    document.getElementById('donarDemo')?.addEventListener('click', () => {
-      alert('Demo: acá iría la pasarela de pagos. Sí, el mundo sigue funcionando con botones.');
-    });
-  </script>
-
-
-
-  <script>
-    const donationButtons = [
-      "#donateBtn",
-      ".btn--primary.btn--sm",
-      "#donarDemo",
-      ".donate-btn"
-    ];
-
-    donationButtons.forEach(sel => {
-      document.querySelectorAll(sel).forEach(btn => {
-        btn.addEventListener("click", () => {
-          window.location.href = "donar.html";
-        });
+    document.querySelectorAll(".btn-donate").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = "./donar.html";
       });
     });
   </script>

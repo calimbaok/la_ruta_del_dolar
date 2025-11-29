@@ -32,7 +32,7 @@
       <div class="card">
         <h2>🇦🇷 Desde Argentina</h2>
         <p>Con MercadoPago, transferencia, tarjeta o saldo en cuenta.</p>
-        <a class="btn" href="https://link.mercadopago.com.ar/calimbaok" target="_blank">
+        <a class="btn btn-donate-arg" href="https://link.mercadopago.com.ar/calimbaok" target="_blank">
           Donar en Argentina
         </a>
       </div>
@@ -41,7 +41,7 @@
       <div class="card">
         <h2>🌎 Desde el Exterior</h2>
         <p>Ideal si estás fuera de Argentina. Rápido y seguro con PayPal.</p>
-        <a class="btn" href="https://paypal.me/calimba" target="_blank">
+        <a class="btn btn-donate-paypal" href="https://paypal.me/calimba" target="_blank">
           Donar con PayPal
         </a>
       </div>
@@ -88,6 +88,15 @@
       </nav>
     </div>
   </footer>
+
+  <!-- Script para alerts de donación -->
+  <script>
+    document.querySelectorAll('.btn-donate-arg, .btn-donate-paypal').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        alert('¡Gracias por tu aporte! 💚');
+      });
+    });
+  </script>
 
 </body>
 </html>
