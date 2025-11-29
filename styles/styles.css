@@ -3,15 +3,15 @@
    =============================== */
 
 /* Importar en orden: variables → reset → componentes */
-@import "_variables.css";
-@import "_reset.css";
-@import "_layout.css";
-@import "_nav.css";
-@import "_hero.css";
-@import "_buttons.css";
-@import "_progress.css";
-@import "_map.css";
-@import "_panel.css";
-@import "_game.css";
-@import "_footer.css";
-@import "_donar-page.css";
+@import url('./_variables.css');
+@import url('./_reset.css');
+@import url('./_layout.css');
+@import url('./_nav.css');
+@import url('./_hero.css');
+@import url('./_buttons.css');
+@import url('./_progress.css');
+@import url('./_map.css');
+@import url('./_panel.css');
+@import url('./_game.css');
+@import url('./_footer.css');
+@import url('./_donar-page.css');
